@@ -35,14 +35,14 @@ const Friends = () => {
         location.pathname === "/"
           ? "rounded-md md:shadow-md md:mt-5 md:mb-5 bg-white"
           : "bg-[#FBFBFB]"
-      } px-5 lg:px-8 pt-3 pb-5  max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-webkit`}
+      } px-3 lg:px-8 pt-3 pb-5  max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-webkit`}
     >
       <h1 className="text-xl font-fontBold text-black">
         Friends {friends.length ? `(${friends.length})` : null}
       </h1>
       {isLoading ? (
         <>
-          <p className="mt-5">Loading...</p>
+          <p className="mt-[18px] mb-[18px]">Loading...</p>
         </>
       ) : (
         <>
@@ -92,7 +92,7 @@ const Friends = () => {
             </>
           ) : (
             <>
-              <p className="mt-5">No Friends</p>
+              <p className="mt-[18px] mb-[18px]">No Friends</p>
             </>
           )}
         </>
