@@ -128,7 +128,7 @@ const UserList = () => {
         All Users {users.length ? `(${users.length})` : null}
       </h1>
       {isLoading ? (
-        <p className="mt-5">Loading...</p>
+        <p className="mt-[18px] mb-[18px]">Loading...</p>
       ) : (
         <>
           {users.map((item, index) => (
@@ -154,7 +154,7 @@ const UserList = () => {
                   {friendRequest.includes(item.id + user.uid) ||
                   friendRequest.includes(user.uid + item.id) ? (
                     <button
-                      className="text-white bg-red-500 px-2 py-1 md:px-3 md:py-1 rounded-md cursor-pointer"
+                      className="text-[15px] lg:text-base text-white bg-red-500 px-.5 py-1 md:px-3 md:py-1 rounded-md cursor-pointer"
                       onClick={() => cancleFriendRequest(item)}
                     >
                       Cancel request
