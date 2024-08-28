@@ -44,13 +44,13 @@ const FriendRequest = () => {
     remove(ref(db, "friendRequest/" + data.id));
   };
   return (
-    <div className="px-5 lg:px-8 pt-3 pb-5 bg-white rounded-md md:shadow-md md:mt-5 md:mb-5 max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-webkit">
+    <div className="px-3 lg:px-8 pt-3 pb-5 bg-white rounded-md md:shadow-md md:mt-5 md:mb-5 max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-webkit">
       <h1 className="text-xl font-fontBold text-black">
         Friend Requests{" "}
         {friendRequest.length ? `(${friendRequest.length})` : null}
       </h1>
       {isLoading ? (
-        <p className="mt-5">Loading...</p>
+        <p className="mt-[18px] mb-[18px]">Loading...</p>
       ) : (
         <>
           {friendRequest.length ? (
@@ -61,25 +61,25 @@ const FriendRequest = () => {
                   key={item.id}
                 >
                   <div className="flex items-center gap-x-2">
-                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden">
                       <img
                         src={item.senderProfile || avaterImage}
                         alt={item.senderName}
                       />
                     </div>
-                    <h3 className="text-lg font-fontRegular text-black">
+                    <h3 className="text-[14px] lg:text-lg font-fontRegular text-black">
                       {item.senderName}
                     </h3>
                   </div>
                   <div className="text-black cursor-pointer flex gap-x-2 items-center">
                     <button
-                      className="text-white bg-[#4A81D3] focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center"
+                      className="text-white bg-[#4A81D3] focus:outline-none font-medium rounded-lg text-sm px-1.5 lg:px-5 py-2 text-center"
                       onClick={() => handelAccept(item)}
                     >
                       Accept
                     </button>
                     <button
-                      className="text-white bg-[#D34A4A] focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center"
+                      className="text-white bg-[#D34A4A] focus:outline-none font-medium rounded-lg text-sm px-1.5 lg:px-5 py-2 text-center"
                       onClick={() => handelReject(item)}
                     >
                       Reject
@@ -90,7 +90,7 @@ const FriendRequest = () => {
             </>
           ) : (
             <>
-              <p className="mt-5">No Friend Requests</p>
+              <p className="mt-[18px] mb-[18px]">No Friend Requests</p>
             </>
           )}
         </>
